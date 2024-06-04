@@ -29,7 +29,7 @@ const Login = () => {
           disabled={false}
           onClick={() => console.log('Clicked')}
         >
-          카카오톡
+          카카오톡으로 로그인
         </Button>
 
         <Button
