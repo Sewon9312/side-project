@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Header />
+      {/* <Header /> */}
       <Container>
         <Routers />
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     </>
 
@@ -23,8 +23,8 @@ export default App;
 
 const Container = styled.div`
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 60px;
 `;
 

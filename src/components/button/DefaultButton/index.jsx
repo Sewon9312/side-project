@@ -27,9 +27,10 @@ const CustomButton = styled.button`
  align-items: center;
  justify-content: center;
  padding: 2px 8px;
- border: solid black;
- color : black;
  font-size: 12px;
+ cursor: pointer;
+
+
 
  
  &:disabled {
@@ -53,11 +54,48 @@ const CustomButton = styled.button`
     css`
     `}
 
+  ${(props) =>
+    props.$variant === 'kakao' &&
+    css`
+      background-color: #FAE100;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: #381E1F;
+      border: unset;
+      border-radius: 8px;
+      /* font: 500 16px #381E1F; */
+    `}
+    ${(props) =>
+    props.$variant === 'naver' &&
+    css`
+      background-color: #20CB02;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      color: #fff;
+      border: unset;
+      border-radius: 8px;
+    `}
+
+    ${(props) =>
+    props.$variant === 'google' &&
+    css`
+      background-color: #fff;
+      border: 1px solid #DBDBDB;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18px;
+      border-radius: 8px;
+      color: #000000;
+    `}
+
   // !! size 
     ${(props) =>
     props.$size === 'md' &&
     css`
-
+      width: 100%;
+      height: 50px;
     `}
   ${(props) =>
     props.$size === 'lg' &&
