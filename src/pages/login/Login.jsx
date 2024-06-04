@@ -4,7 +4,7 @@ import Button from '../../components/button/DefaultButton'
 import Icon from '../../components/Icon/index'
 
 
-const login = () => {
+const Login = () => {
   return (
     <Wrap>
 
@@ -29,7 +29,7 @@ const login = () => {
           disabled={false}
           onClick={() => console.log('Clicked')}
         >
-          카카오톡으로 로그인
+          카카오톡
         </Button>
 
         <Button
@@ -61,7 +61,7 @@ const login = () => {
   )
 }
 
-export default login
+export default Login
 
 const Wrap = styled.div`
     display: flex;
