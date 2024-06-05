@@ -2,9 +2,23 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '../../components/button/DefaultButton'
 import Icon from '../../components/Icon/index'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
+  const OnSubmit = (e) => {
+    e.preventDefault();
+
+    navigate('/home')
+
+  }
+
+
+
   return (
     <Wrap>
 
@@ -22,35 +36,38 @@ const Login = () => {
       </ContentTop>
 
       <ContentBottom>
-        <Button
-          type="submit"
-          variant="kakao"
-          size="md"
-          disabled={false}
-          onClick={() => console.log('Clicked')}
-        >
-          카카오톡으로 로그인
-        </Button>
+        <Form onSubmit={OnSubmit}>
+          <Button
+            type="submit"
+            variant="kakao"
+            size="md"
+            disabled={false}
+            onClick={OnSubmit}
+          >
+            카카오톡으로 로그인
+          </Button>
 
-        <Button
-          type="submit"
-          variant="naver"
-          size="md"
-          disabled={false}
-          onClick={() => console.log('Clicked')}
-        >
-          네이버로 로그인
-        </Button>
+          <Button
+            type="submit"
+            variant="naver"
+            size="md"
+            disabled={false}
+            onClick={OnSubmit}
+          >
+            네이버로 로그인
+          </Button>
 
-        <Button
-          type="submit"
-          variant="google"
-          size="md"
-          disabled={false}
-          onClick={() => console.log('Clicked')}
-        >
-          구글로 로그인
-        </Button>
+          <Button
+            type="submit"
+            variant="google"
+            size="md"
+            disabled={false}
+            onClick={OnSubmit}
+          >
+            구글로 로그인
+          </Button>
+        </Form>
+
 
       </ContentBottom>
 
@@ -62,6 +79,12 @@ const Login = () => {
 }
 
 export default Login
+
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    gap: 12px 0;
+`
 
 const Wrap = styled.div`
     display: flex;
@@ -91,9 +114,7 @@ display: flex;
 const ContentBottom = styled.div`
 width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    gap: 12px 0;
+${Form}
 
   
 
